@@ -16,18 +16,18 @@ for k=1:length(dosya)
         oz(k,2049)=0;
     end
 end
-% Özellik normalizasyon
+% Ozellik normalizasyon
 
 for i=1:2048
     X(:,i)=(oz(:,i)-min(oz(:,i)))/((max(oz(:,i))-min(oz(:,i)))+eps);
 end
 
-%Aðýrlýklarýn hesaplanmasý
+%Agirliklarin hesaplanmasi
 
 y=oz(:,2049);
 [a,b]=relieff(X,y,10);
 
-%b(aðýrlýk deðeri boþ yada negatif ise 0 yap)
+%Agirlik degeri bos yada negatif ise 0 yap)
 
 for i=1:2048
     if isnan(b(i))
@@ -38,7 +38,7 @@ for i=1:2048
     end
 end
 
-%Özellik indirgemesi
+%Ozellik indirgemesi
 
 for j=1:309
 sayac=1;
